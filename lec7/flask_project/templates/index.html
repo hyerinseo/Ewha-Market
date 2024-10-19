@@ -1,0 +1,76 @@
+{%with messages = get_flashed_messages()%}
+{%if messages %}
+  <script type="text/javascript">
+    alert("{{messages[-1]}}");
+  </script>
+  {%endif%}
+{%endwith%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .navbar__logo {
+            padding-left: 50px;
+            display: inline-block;
+
+        }
+        .login_button{
+            float: right;
+            display: inline-block;
+        }
+        
+        .login_menu {
+            color:white;
+            padding: 20px;
+        }
+
+        li {
+            display: inline-block;
+        }
+        .menu {
+            color:white;
+            padding: 20px;
+            font-size:large;
+        }
+
+
+    </style>
+    <script src="{{ url_for('static', filename='main.js') }}" defer></script>
+</head>
+<body>
+<nav class="navbar" style="background-color: #00462A;">
+<div class="navbar__logo">
+    <a href="/"><font size="20px" color="white">Ewha Market</a></font>
+</div>
+
+<div class="login_button">
+<ul class="login_bar">
+    {%if userid%}
+    <li><a class="login_menu" href="/logout">로그아웃</a></li>
+    <li><a class="login_menu" href="/mypage">마이페이지</a></li>
+    {%else%}
+    <li><a class="login_menu" href="/loginpage">로그인</a></li>
+    {%endif%}
+</ul>
+</div>
+<br><br>
+<ul class="navbar__menu">
+    <li><a class="menu" href="/list">상품 목록</a></li>
+    <li><a class="menu" href="/review">리뷰 목록</a></li>
+    <li><a class="menu" href="/reg_items">상품 올리기</a></li>
+    <li><a class="menu" href="/reg_reviews">리뷰 작성하기</a></li>
+</ul><br>
+<a href="#" class="navbar__toogleBtn">
+<i class="fas fa-bars"></i>
+</a>
+</nav>
+<section>
+    {% block section %}
+
+    {% endblock section %}
+</section>
+</body>
