@@ -1,0 +1,166 @@
+body { 
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.navbar {
+    background-color: #00462A;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar__logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.navbar__menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+}
+
+.menu:hover, .menu.active {
+    text-decoration: underline;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #006937; 
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* 작은 화면에서 줄바꿈 */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="file"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    padding: 12px 24px; /* 버튼 크기 조정 */
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838; /* hover 시 색상 변경 */
+}
+
+.submit-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.cancel-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+}
+
+.star {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.star.selected {
+    color: #006400;
+}
+
+.file-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.file-buttons button {
+    background-color: #006400;
+    color: white;
+}
+
+.file-upload-section #file-name {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold; /* 강조 */
+    color: #333; /* 더 어두운 색상 */
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.upload-rating-container {
+    width: 45%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .upload-rating-container {
+        width: 100%; /* 작은 화면에서 100%로 확장 */
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1200px;
+    }
+}
